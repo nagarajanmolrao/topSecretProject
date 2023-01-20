@@ -6,7 +6,7 @@ def liveView():
     mp_drawing = mp.solutions.drawing_utils
     mp_holistic = mp.solutions.holistic
 
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     # Initiate holistic model
     with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:

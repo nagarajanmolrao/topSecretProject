@@ -14,7 +14,7 @@ with open('coords.csv', mode='w', newline='') as f:
     csv_writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     csv_writer.writerow(landmarks)
 for eachClass in ["Heart Pain", "Normal"]:
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     # Initiate holistic model
     mp_drawing = mp.solutions.drawing_utils
