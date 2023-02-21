@@ -1,7 +1,7 @@
 import pickle
 import mediapipe as mp
+import pandas
 import cv2
-import pandas as pd
 
 with open('body_language.pkl', 'rb') as f:
     model = pickle.load(f)
@@ -9,8 +9,8 @@ with open('body_language.pkl', 'rb') as f:
 cap = cv2.VideoCapture(0)
 
 # Initiate holistic model
-mp_drawing = mp.solutions.drawing_utils
-mp_holistic = mp.solutions.holistic
+mp_drawing = mp.solutions.drawing_utils  # Drawing helpers
+mp_holistic = mp.solutions.holistic  # Mediapipe Solutions
 with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
     while cap.isOpened():
         ret, frame = cap.read()
